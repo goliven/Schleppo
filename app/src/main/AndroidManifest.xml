@@ -15,6 +15,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".profil" />
+        <activity
+            android:name=".MailListActivity"
+            android:label="@string/title_mail_list"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".MailDetailActivity"
+            android:label="@string/title_mail_detail"
+            android:parentActivityName=".MailListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.moco.schleppo.schleppo.MailListActivity" />
+        </activity>
     </application>
 
 </manifest>
