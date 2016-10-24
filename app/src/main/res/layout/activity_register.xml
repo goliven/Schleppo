@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_register"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.moco.schleppo.schleppo.RegisterActivity">
+
+    <TextView
+        android:text="Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/regNameLAbelView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/regNameInputText"
+        android:layout_below="@+id/regNameLAbelView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Vorname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regNameInputText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/textView4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Username"
+        android:ems="10"
+        android:id="@+id/regUsernameInputTEext"
+        android:layout_below="@+id/regUsernameLabelView"
+        android:layout_alignLeft="@+id/regSurnameInputText"
+        android:layout_alignStart="@+id/regSurnameInputText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Vorname"
+        android:ems="10"
+        android:id="@+id/regSurnameInputText"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/regNameInputText"
+        android:layout_alignStart="@+id/regNameInputText" />
+
+    <TextView
+        android:text="Kennzeichen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regUsernameInputTEext"
+        android:id="@+id/regLicensePlateLabelView" />
+
+    <TextView
+        android:text="E-Mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regLicencePlateInputText"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_alignEnd="@+id/textView4"
+        android:id="@+id/regMailLabelView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:layout_below="@+id/regMailLabelView"
+        android:layout_alignRight="@+id/regLicencePlateInputText"
+        android:layout_alignEnd="@+id/regLicencePlateInputText"
+        android:id="@+id/editText5" />
+
+    <TextView
+        android:text="Username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/regUsernameLabelView"
+        android:layout_below="@+id/regSurnameInputText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Passwort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/regPassword1LabelView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/rePassword1InputText"
+        android:text="Passwort"
+        android:layout_below="@+id/regPassword1LabelView"
+        android:layout_alignLeft="@+id/editText5"
+        android:layout_alignStart="@+id/editText5" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/regMailInputText"
+        android:text="E-Mail"
+        android:layout_alignBaseline="@+id/editText5"
+        android:layout_alignBottom="@+id/editText5"
+        android:layout_alignLeft="@+id/editText5"
+        android:layout_alignStart="@+id/editText5" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Kennzeichen"
+        android:ems="10"
+        android:id="@+id/regLicencePlateInputText"
+        android:layout_below="@+id/regLicensePlateLabelView"
+        android:layout_alignLeft="@+id/regUsernameInputTEext"
+        android:layout_alignStart="@+id/regUsernameInputTEext" />
+
+    <TextView
+        android:text="Passwort wiederholen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rePassword1InputText"
+        android:id="@+id/regPassword2LabelView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/regPassword2LabelView"
+        android:layout_alignRight="@+id/rePassword1InputText"
+        android:layout_alignEnd="@+id/rePassword1InputText"
+        android:id="@+id/regPassword2InputText"
+        android:text="Passwort" />
+
+    <Button
+        android:text="Anmelden"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/regPassword2InputText"
+        android:layout_toRightOf="@+id/regUsernameLabelView"
+        android:layout_toEndOf="@+id/regUsernameLabelView"
+        android:id="@+id/registerButton" />
+
+    <Button
+        android:text="Abbrechen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/registerButton"
+        android:layout_toEndOf="@+id/registerButton"
+        android:layout_marginLeft="18dp"
+        android:layout_marginStart="18dp"
+        android:id="@+id/discardButton" />
+</RelativeLayout>
