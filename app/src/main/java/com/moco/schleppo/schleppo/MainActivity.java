@@ -8,21 +8,26 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
-    Button button;
-    Button btnmail;
+    ImageButton profileBtn;
+    ImageButton mapBtn;
+    ImageButton warningBtn;
+    ImageButton messageBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Locate the button in activity_main.xml
-        button = (Button) findViewById(R.id.MyButton);
-        btnmail = (Button) findViewById(R.id.btnmails);
+        profileBtn = (ImageButton) findViewById(R.id.imageButton_Profile);
+        mapBtn = (ImageButton) findViewById(R.id.imageButton_Map);
+        warningBtn = (ImageButton) findViewById(R.id.imageButton_Warning);
+        messageBtn = (ImageButton) findViewById(R.id.imageButton_Messages);
 
         // Capture button clicks
-        button.setOnClickListener(new OnClickListener() {
+        profileBtn.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
 
                 // Start NewActivity.class
@@ -32,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnmail.setOnClickListener(new OnClickListener() {
+        messageBtn.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
 
                 // Start NewActivity.class
