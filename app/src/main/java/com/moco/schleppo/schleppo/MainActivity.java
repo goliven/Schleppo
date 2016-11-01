@@ -15,12 +15,18 @@ public class MainActivity extends AppCompatActivity {
     ImageButton mapBtn;
     ImageButton warningBtn;
     ImageButton messageBtn;
+    SidebarBinder sidebar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // Locate the button in activity_main.xml
+
+        setClickListener();
+        sidebar = new SidebarBinder(MainActivity.this);
+    }
+
+    public void setClickListener () {
         profileBtn = (ImageButton) findViewById(R.id.imageButton_Profile);
         mapBtn = (ImageButton) findViewById(R.id.imageButton_Map);
         warningBtn = (ImageButton) findViewById(R.id.imageButton_Warning);
@@ -36,7 +42,24 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+        mapBtn.setOnClickListener(new OnClickListener() {
+            public void onClick(View arg0) {
 
+                // Start NewActivity.class
+                Intent myIntent = new Intent(MainActivity.this,
+                        profil.class);
+                startActivity(myIntent);
+            }
+        });
+        warningBtn.setOnClickListener(new OnClickListener() {
+            public void onClick(View arg0) {
+
+                // Start NewActivity.class
+                Intent myIntent = new Intent(MainActivity.this,
+                        profil.class);
+                startActivity(myIntent);
+            }
+        });
         messageBtn.setOnClickListener(new OnClickListener() {
             public void onClick(View arg0) {
 
@@ -47,6 +70,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }

@@ -3,9 +3,8 @@ package com.moco.schleppo.schleppo;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,18 +12,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-public class SidebarActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+/**
+ * Created by soere on 25.10.2016.
+ */
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sidebar);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+public class SidebarBinder implements NavigationView.OnNavigationItemSelectedListener {
+    SidebarActivity sidebarActivity;
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+    public SidebarBinder (AppCompatActivity v) {
+        sidebarActivity = new SidebarActivity();
+        onCreate();
+    }
+
+    protected void onCreate() {
+        Toolbar toolbar = (Toolbar) sidebarActivity.findViewById(R.id.toolbar);
+        sidebarActivity.setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) sidebarActivity.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,37 +39,34 @@ public class SidebarActivity extends AppCompatActivity
             }
         });
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) sidebarActivity.findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+                sidebarActivity, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) sidebarActivity.findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setHomeButtonEnabled(true);
     }
 
-    @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) sidebarActivity.findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            sidebarActivity.onBackPressed();
         }
     }
 
-    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.sidebar, menu);
+        sidebarActivity.getMenuInflater().inflate(R.menu.sidebar, menu);
         return true;
     }
 
-    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -75,7 +78,7 @@ public class SidebarActivity extends AppCompatActivity
             return true;
         }
 
-        return super.onOptionsItemSelected(item);
+        return sidebarActivity.onOptionsItemSelected(item);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -86,40 +89,40 @@ public class SidebarActivity extends AppCompatActivity
         Intent myIntent;
 
         if (id == R.id.nav_home) {
-            myIntent = new Intent(SidebarActivity.this,
-                MainActivity.class);
-            startActivity(myIntent);
+            myIntent = new Intent(sidebarActivity,
+                    MainActivity.class);
+            sidebarActivity.startActivity(myIntent);
         } else if (id == R.id.nav_help) {
-            myIntent = new Intent(SidebarActivity.this,
-                MainActivity.class);
-            startActivity(myIntent);
+            myIntent = new Intent(sidebarActivity,
+                    MainActivity.class);
+            sidebarActivity.startActivity(myIntent);
         } else if (id == R.id.nav_map) {
-            myIntent = new Intent(SidebarActivity.this,
-                MainActivity.class);
-            startActivity(myIntent);
+            myIntent = new Intent(sidebarActivity,
+                    MainActivity.class);
+            sidebarActivity.startActivity(myIntent);
         } else if (id == R.id.nav_messages) {
-            myIntent = new Intent(SidebarActivity.this,
-                MailListActivity.class);
-            startActivity(myIntent);
+            myIntent = new Intent(sidebarActivity,
+                    MailListActivity.class);
+            sidebarActivity.startActivity(myIntent);
         } else if (id == R.id.nav_settings) {
-            myIntent = new Intent(SidebarActivity.this,
-                MainActivity.class);
-            startActivity(myIntent);
+            myIntent = new Intent(sidebarActivity,
+                    MainActivity.class);
+            sidebarActivity.startActivity(myIntent);
         } else if (id == R.id.nav_warnDriver) {
-            myIntent = new Intent(SidebarActivity.this,
-                MainActivity.class);
-            startActivity(myIntent);
+            myIntent = new Intent(sidebarActivity,
+                    MainActivity.class);
+            sidebarActivity.startActivity(myIntent);
         } else if (id == R.id.nav_profile) {
-            myIntent = new Intent(SidebarActivity.this,
-                profil.class);
-            startActivity(myIntent);
+            myIntent = new Intent(sidebarActivity,
+                    profil.class);
+            sidebarActivity.startActivity(myIntent);
         } else if (id == R.id.nav_login) {
-            myIntent = new Intent(SidebarActivity.this,
+            myIntent = new Intent(sidebarActivity,
                     LoginActivity.class);
-            startActivity(myIntent);
+            sidebarActivity.startActivity(myIntent);
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) sidebarActivity.findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
