@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.moco.schleppo.schleppo">
+          package="com.moco.schleppo.schleppo">
 
     <application
         android:allowBackup="true"
@@ -10,16 +10,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".profil" />
+        <activity android:name=".profil"/>
         <activity
             android:name=".MailListActivity"
             android:label="@string/title_mail_list"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".MailDetailActivity"
             android:label="@string/title_mail_detail"
@@ -27,12 +27,14 @@
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moco.schleppo.schleppo.MailListActivity" />
+                android:value="com.moco.schleppo.schleppo.MailListActivity"/>
         </activity>
         <activity
             android:name=".SidebarActivity"
             android:label="@string/title_activity_sidebar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".KarteActivity">
+        </activity>
     </application>
 
 </manifest>
