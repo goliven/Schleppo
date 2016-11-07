@@ -1,14 +1,30 @@
 package com.moco.schleppo.schleppo;
 
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.app.Activity;
 import android.content.Intent;
-import android.view.Menu;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.parse.GetCallback;
+import com.parse.GetDataCallback;
+import com.parse.Parse;
+import com.parse.ParseACL;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.interceptors.ParseLogInterceptor;
+
+import java.io.ByteArrayOutputStream;
+
+import bolts.Task;
 
 public class MainActivity extends AppCompatActivity {
     ImageButton profileBtn;
@@ -24,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
         setClickListener();
         sidebar = new SidebarBinder(MainActivity.this);
+
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+
+        
     }
 
     public void setClickListener () {
@@ -70,4 +91,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
+
 }
