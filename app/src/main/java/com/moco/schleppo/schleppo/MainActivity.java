@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
 
-        
+
     }
 
     public void setClickListener () {
