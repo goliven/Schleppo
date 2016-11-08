@@ -6,6 +6,8 @@ import android.util.DisplayMetrics;
 
 public class Popwarn extends AppCompatActivity {
 
+    //private
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

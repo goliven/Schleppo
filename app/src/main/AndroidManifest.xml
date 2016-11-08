@@ -43,8 +43,8 @@
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
         -->
         <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyAB1u8kLVHqvHqeO5WvJmfHuwaTIAYLn9k" />
 
         <activity android:name=".Popwarn"
             android:theme="@style/AppTheme.CustomTheme"
