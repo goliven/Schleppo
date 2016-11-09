@@ -6,7 +6,7 @@
     <string name="Button">Button</string>
     <string name="title_mail_list">Mails</string>
     <string name="title_mail_detail">Mail Detail</string>
-    <string name="title_activity_sidebar">SidebarActivity</string>
+    <string name="title_activity_sidebar">Schleppo - Menu</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
